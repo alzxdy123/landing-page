@@ -2,13 +2,10 @@
   "name": "landing-page",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
-  "engines": {
-    "node": ">=18"
-  },
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -18,7 +15,6 @@
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.2",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
