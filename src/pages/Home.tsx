@@ -1,10 +1,13 @@
 import { Element } from 'react-scroll'
-import { Navbar } from '../components'
+import { Hero, Navbar } from '../components'
 
 function App() {
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar />
+            <Element name='hero'>
+                <Hero />
+            </Element>
         </>
     )
 }

@@ -341,3 +341,150 @@ export const ProductServices = [
         path: '#',
     },
 ]
+
+export const HeroCarouselSlides = [
+    {
+        content: (
+            <div
+                className='flex h-full w-full items-center justify-center bg-cover bg-center'
+                style={{ backgroundImage: `url(${bgSlide1})` }}
+            >
+                <div className='mx-auto flex w-[80%] items-center justify-center text-white dark:text-slate-800 xl:mt-32'>
+                    <div className='flex flex-col items-center gap-5'>
+                        <h1 className='text-4xl font-bold xl:text-5xl'>
+                            Mobile Banking
+                        </h1>
+                        <p className='text-center text-xl xl:text-2xl'>
+                            Providing every Bank’s needs for Customers to make
+                            transaction on Mobile Banking applications that
+                            convenient, safe, and fastest in the new digital
+                            era.
+                        </p>
+                    </div>
+                    <img
+                        src={carouselImage1}
+                        alt=''
+                        width={600}
+                        className='hidden xl:block'
+                    />
+                </div>
+            </div>
+        ),
+    },
+    {
+        content: (
+            <div
+                className='flex h-full w-full items-center justify-center bg-cover bg-center'
+                style={{ backgroundImage: `url(${bgSlide2})` }}
+            >
+                <div className='mx-auto flex w-[80%] flex-col items-center justify-center gap-5 text-white dark:text-slate-800 xl:mt-32'>
+                    <div className='flex flex-col items-center gap-5 text-center'>
+                        <h1 className='text-4xl font-bold xl:text-5xl'>
+                            Internet Banking
+                        </h1>
+                        <p className='text-center text-xl xl:w-[60%] xl:text-2xl'>
+                            One of the needs of every Bank for Customers to
+                            conduct financial or non-financial transactions
+                            online through the Web, it is not only convenient
+                            but also a safe banking method.
+                        </p>
+                    </div>
+                    <img
+                        src={carouselImage2}
+                        alt=''
+                        width={900}
+                        className='hidden xl:block'
+                    />
+                </div>
+            </div>
+        ),
+    },
+    {
+        content: (
+            <div
+                className='bg-cove flex h-full w-full items-center justify-center bg-center'
+                style={{ backgroundImage: `url(${bgSlide3})` }}
+            >
+                <div className='mx-auto flex w-[80%] flex-col items-center gap-5 text-white dark:text-slate-800 xl:mt-32'>
+                    <div className='flex flex-col items-center gap-5 text-center'>
+                        <h1 className='text-4xl font-bold xl:text-5xl'>
+                            Internet Banking Corporate
+                        </h1>
+                        <p className='text-center text-xl xl:text-2xl'>
+                            To help improve the quality of the Bank’s services
+                            in providing the needs of the Customer’s Company in
+                            conducting online financial transactions via
+                            Internet, safe and trusted.
+                        </p>
+                    </div>
+                    <img
+                        src={carouselImage3}
+                        alt=''
+                        width={900}
+                        className='hidden xl:block'
+                    />
+                </div>
+            </div>
+        ),
+    },
+    {
+        content: (
+            <div
+                className='flex h-full w-full items-center justify-center bg-cover bg-center'
+                style={{ backgroundImage: `url(${bgSlide1})` }}
+            >
+                <div className='mx-auto flex w-[80%] flex-row-reverse items-center gap-5 text-white dark:text-slate-800 xl:mt-32'>
+                    <div className='flex flex-col items-center gap-5'>
+                        <h1 className='text-center text-4xl font-bold xl:text-5xl'>
+                            Customer On Boarding
+                        </h1>
+                        <p className='text-center text-xl xl:text-2xl'>
+                            Facilitating the Bank to provide Out of Branch
+                            Services for New Customers who wish to open Time
+                            Deposits and Loans.
+                        </p>
+                        <img
+                            src={carouselImage4_2}
+                            alt=''
+                            width={550}
+                            className='hidden xl:block'
+                        />
+                    </div>
+                    <img
+                        src={carouselImage4_1}
+                        alt=''
+                        width={500}
+                        className='hidden xl:block'
+                    />
+                </div>
+            </div>
+        ),
+    },
+    {
+        content: (
+            <div
+                className='flex h-full w-full items-center justify-center bg-cover bg-center'
+                style={{ backgroundImage: `url(${bgSlide1})` }}
+            >
+                <div className='mx-auto flex w-[80%] flex-row-reverse items-start gap-5 text-white dark:text-slate-800 xl:mt-32'>
+                    <div className='flex flex-col items-center gap-5 xl:mt-20'>
+                        <h1 className='text-center text-4xl font-bold xl:text-5xl'>
+                            Bank Agent (Laku Pandai)
+                        </h1>
+                        <p className='text-center text-xl xl:text-2xl'>
+                            Application that can help the Bank to reach People
+                            who have never done Banking Transactions and Support
+                            the Government program “Laku Pandai”.
+                        </p>
+                    </div>
+                    <img
+                        src={carouselImage5}
+                        alt=''
+                        width={400}
+                        className='hidden xl:block'
+                    />
+                </div>
+            </div>
+        ),
+    },
+]

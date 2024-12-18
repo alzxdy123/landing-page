@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils'
 import { pac, pacLogoWhite, NavBarLists } from '@/constants'
 import NavbarList from './NavbarList'
 import GotQuestion from './GotQuestion'
-// import ThemeSwitch from '../ThemeSwitch'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import DropdownNavbarList from './DropdownNavbarList'
+// import ThemeSwitch from '../ThemeSwitch'
 
 const Navbar = ({ fincloud = false }: { fincloud?: boolean }) => {
     const [navToggle, setNavToggle] = useState(false)
@@ -68,7 +68,7 @@ const Navbar = ({ fincloud = false }: { fincloud?: boolean }) => {
                     handleMouseEnter={handleMouseEnter}
                     handleMouseLeave={handleMouseLeave}
                 />
-                <div className='flex gap-5'>
+                <div className='flex gap-5 xl:hidden'>
                     {/* <ThemeSwitch /> */}
                     <div
                         onClick={() => setNavToggle(!navToggle)}
