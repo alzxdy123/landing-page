@@ -1,67 +1,113 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { gsap } from 'gsap'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { navBarLists, pac, pacLogoCash, pacLogoWhite } from '@/constants'
+import { Link as RouterLink } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import { pac, pacLogoWhite, NavBarLists } from '@/constants'
+import NavbarList from './NavbarList'
+import GotQuestion from './GotQuestion'
+// import ThemeSwitch from '../ThemeSwitch'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import DropdownNavbarList from './DropdownNavbarList'
 
-interface NavBarItem {
-    name: string
-    path: string
-    type: string
-}
+const Navbar = ({ fincloud = false }: { fincloud?: boolean }) => {
+    const [navToggle, setNavToggle] = useState(false)
+    const dropdownRef = useRef<HTMLDivElement | null>(null)
+    const hamburgerRef = useRef<HTMLDivElement | null>(null)
 
-function Navbar() {
-    const [navToggle, setNavToggle] = React.useState(false)
-    const dropdownRef = React.useRef<HTMLDivElement | null>(null)
-    const hamburgerRef = React.useRef<HTMLDivElement | null>(null)
-
-    const navBarLists: NavBarItem[] = [
-        { name: 'Why PAC?', path: 'whypac', type: 'scroll' },
-        { name: 'Product', path: 'product', type: 'scroll' },
-        { name: 'Ecosystem', path: 'ecosystem', type: 'scroll' },
-        { name: 'Fincloud', path: '/fincloud', type: 'router' },
-        { name: 'EMoney', path: 'emoney', type: 'scroll' },
-        { name: 'Our Customer', path: 'ourcustomer', type: 'scroll' },
-        {
-            name: 'Carrer',
-            path: 'https://id.jobstreet.com/companies/pactindo-facilities-168556022423394',
-            type: 'link',
-        },
-    ]
-
-    React.useEffect(() => {
+    useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (
-                dropdownRef.current &&
-                !dropdownRef.current.contains(event.target as Node) &&
-                hamburgerRef.current &&
-                !hamburgerRef.current.contains(event.target as Node)
+                !dropdownRef.current?.contains(event.target as Node) &&
+                !hamburgerRef.current?.contains(event.target as Node)
             ) {
                 setNavToggle(false)
             }
         }
-
         document.addEventListener('mousedown', handleClickOutside)
-
-        return () => {
+        return () =>
             document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [dropdownRef])
+    }, [])
 
-    const handleMouseEnter = (e: any) => {
+    const handleMouseEnter = (e: React.MouseEvent) => {
         const animationElement =
             e.currentTarget.querySelector('.link-animation')
         gsap.to(animationElement, { width: '100%', duration: 0.3, left: 0 })
     }
 
-    const handleMouseLeave = (e: any) => {
+    const handleMouseLeave = (e: React.MouseEvent) => {
         const animationElement =
             e.currentTarget.querySelector('.link-animation')
         gsap.to(animationElement, { width: '0%', duration: 0.3, left: '100%' })
     }
 
-    return <div className={cn()}>navbar</div>
+    const logo = fincloud ? pac : pacLogoWhite
+    const textColor = fincloud
+        ? 'text-black dark:text-white'
+        : 'text-white dark:text-slate-800'
+
+    return (
+        <div
+            className={cn(
+                'absolute top-0 z-50 w-full bg-transparent py-2 pb-11'
+            )}
+        >
+            <GotQuestion fincloud={fincloud} />
+            <nav className='relative mx-auto my-5 flex w-[90%] items-center justify-between'>
+                <RouterLink to='/'>
+                    <img
+                        src={logo}
+                        alt='PAC Logo'
+                        className='w-20 cursor-pointer'
+                    />
+                </RouterLink>
+                <NavbarList
+                    items={NavBarLists}
+                    textColor={textColor}
+                    fincloud={fincloud}
+                    handleMouseEnter={handleMouseEnter}
+                    handleMouseLeave={handleMouseLeave}
+                />
+                <div className='flex gap-5'>
+                    {/* <ThemeSwitch /> */}
+                    <div
+                        onClick={() => setNavToggle(!navToggle)}
+                        className={cn(
+                            'cursor-pointer rounded-md border-2 dark:border-slate-800 dark:text-slate-800 lg:hidden',
+                            fincloud
+                                ? 'border-black text-black'
+                                : 'border-slate-200 text-white'
+                        )}
+                        ref={hamburgerRef}
+                    >
+                        <GiHamburgerMenu
+                            className={cn(
+                                'm-2 text-2xl',
+                                navToggle === true
+                                    ? fincloud
+                                        ? ''
+                                        : 'text-white'
+                                    : ''
+                            )}
+                        />
+                    </div>
+                </div>
+
+                {navToggle && (
+                    <div
+                        ref={dropdownRef}
+                        className='absolute top-16 flex w-full flex-col overflow-hidden rounded-xl bg-white dark:bg-slate-800'
+                    >
+                        <DropdownNavbarList
+                            items={NavBarLists}
+                            setNavToggle={setNavToggle}
+                            textColor={textColor}
+                        />
+                    </div>
+                )}
+            </nav>
+        </div>
+    )
 }
 
 export default Navbar
