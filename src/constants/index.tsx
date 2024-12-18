@@ -364,7 +364,7 @@ export const HeroCarouselSlides = [
                     <img
                         src={carouselImage1}
                         alt=''
-                        width={600}
+                        width={500}
                         className='hidden xl:block'
                     />
                 </div>
@@ -392,7 +392,7 @@ export const HeroCarouselSlides = [
                     <img
                         src={carouselImage2}
                         alt=''
-                        width={900}
+                        width={700}
                         className='hidden xl:block'
                     />
                 </div>
@@ -420,7 +420,7 @@ export const HeroCarouselSlides = [
                     <img
                         src={carouselImage3}
                         alt=''
-                        width={900}
+                        width={800}
                         className='hidden xl:block'
                     />
                 </div>
@@ -446,14 +446,14 @@ export const HeroCarouselSlides = [
                         <img
                             src={carouselImage4_2}
                             alt=''
-                            width={550}
+                            width={450}
                             className='hidden xl:block'
                         />
                     </div>
                     <img
                         src={carouselImage4_1}
                         alt=''
-                        width={500}
+                        width={400}
                         className='hidden xl:block'
                     />
                 </div>
@@ -480,7 +480,7 @@ export const HeroCarouselSlides = [
                     <img
                         src={carouselImage5}
                         alt=''
-                        width={400}
+                        width={300}
                         className='hidden xl:block'
                     />
                 </div>
