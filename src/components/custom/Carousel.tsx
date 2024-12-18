@@ -44,14 +44,14 @@ function Carousel({ content }: CarouselType) {
 
             <button
                 onClick={handlePrev}
-                className='absolute left-20 top-1/2 z-10 hidden -translate-y-1/2 transform rounded-full bg-slate-200 p-4 text-black shadow-2xl dark:bg-slate-800 xl:block'
+                className='absolute left-4 top-1/2 z-10 hidden -translate-y-1/2 transform rounded-full bg-slate-200 p-4 text-black shadow-2xl dark:bg-slate-800 xl:block'
             >
                 <FaArrowLeft className='dark:text-white' />
             </button>
 
             <button
                 onClick={handleNext}
-                className='absolute right-20 top-1/2 z-10 hidden -translate-y-1/2 transform rounded-full bg-slate-200 p-4 text-black shadow-2xl dark:bg-slate-800 xl:block'
+                className='absolute right-4 top-1/2 z-10 hidden -translate-y-1/2 transform rounded-full bg-slate-200 p-4 text-black shadow-2xl dark:bg-slate-800 xl:block'
             >
                 <FaArrowRight className='dark:text-white' />
             </button>

@@ -488,3 +488,34 @@ export const HeroCarouselSlides = [
         ),
     },
 ]
+
+export const BPD = [
+    bali,
+    jambi,
+    sulselbar,
+    bankSultra,
+    bankKalsel,
+    bankNtt,
+    bankPapua,
+]
+
+export const BANK_UMUM = [
+    bws,
+    bss,
+    bcasyariah,
+    agi,
+    mandiri,
+    victoria,
+    btpn,
+    maspion,
+    ccbi,
+    ganesha,
+    mas,
+    index,
+    capital,
+    ina,
+    ctbc,
+    bjj,
+    bhi,
+    bankInc,
+]
